@@ -8,6 +8,10 @@ const nextConfig = {
     // - If custom domain (not github.io), use empty string
     // - Otherwise use /tools-frontend for GitHub Pages subdirectory
     basePath: (() => {
+        // ALWAYS use empty string for custom domain deployment (tools.stylofront.com)
+        return '';
+
+        /* Original logic preserved for reference but disabled for custom domain fix:
         // Check if BASE_PATH is explicitly set (handles empty string case)
         if ('BASE_PATH' in process.env) {
             return process.env.BASE_PATH || '';
@@ -18,6 +22,7 @@ const nextConfig = {
         }
         // Default: use /tools-frontend for production GitHub Pages
         return process.env.NODE_ENV === 'production' ? '/tools-frontend' : '';
+        */
     })(),
     // Set trailingSlash for GitHub Pages compatibility
     trailingSlash: true,
