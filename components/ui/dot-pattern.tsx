@@ -28,6 +28,7 @@ interface DotPatternProps extends React.SVGProps<SVGSVGElement> {
   cr?: number
   className?: string
   glow?: boolean
+  id?: string
   [key: string]: unknown
 }
 
@@ -71,9 +72,11 @@ export function DotPattern({
   cr = 1,
   className,
   glow = false,
+  id: propId,
   ...props
 }: DotPatternProps) {
-  const id = useId()
+  const generatedId = useId()
+  const id = propId || generatedId
   const containerRef = useRef<SVGSVGElement>(null)
   const [dimensions, setDimensions] = useState({ width: 0, height: 0 })
 

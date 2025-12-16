@@ -14,6 +14,7 @@ export function HeroSection() {
             <div className="absolute inset-0 overflow-hidden pointer-events-none">
                 {/* Dot Pattern Background */}
                 <DotPattern
+                    id="hero-pattern"
                     className="opacity-40 [mask-image:radial-gradient(ellipse_at_center,white,transparent)]"
                     width={20}
                     height={20}

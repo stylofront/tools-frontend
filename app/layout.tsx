@@ -29,11 +29,11 @@ export const metadata: Metadata = {
     description: 'Developer tools and utilities by StyloFront.',
     icons: {
         icon: [
-            { url: '/logo.png', sizes: '32x32', type: 'image/png' },
-            { url: '/logo.png', sizes: '16x16', type: 'image/png' },
+            { url: '/tools-logo.png', sizes: '32x32', type: 'image/png' },
+            { url: '/tools-logo.png', sizes: '16x16', type: 'image/png' },
         ],
         apple: [
-            { url: '/logo.png', sizes: '180x180', type: 'image/png' },
+            { url: '/tools-logo.png', sizes: '180x180', type: 'image/png' },
         ],
     },
 }
@@ -47,6 +47,7 @@ export default function RootLayout({
         <html lang="en" suppressHydrationWarning className={`${outfit.variable} ${spaceGrotesk.variable}`}>
             <head>
                 <meta name="viewport" content="width=device-width, initial-scale=1" />
+                <link rel="icon" href="/tools-logo-t.png" />
             </head>
             <body className={`${spaceGrotesk.className} antialiased`}>
                 <ThemeProvider

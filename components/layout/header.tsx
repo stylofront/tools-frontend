@@ -1,8 +1,9 @@
 "use client"
 
 import Link from "next/link"
+import Image from "next/image"
 import { Button } from "@/components/ui/button"
-import { Menu, X, Wrench } from "lucide-react"
+import { Menu, X } from "lucide-react"
 import { useState } from "react"
 import { ThemeToggle } from "@/components/ui/theme-toggle"
 
@@ -14,9 +15,13 @@ export function Header() {
             <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
                 <div className="flex h-14 items-center justify-between">
                     <Link href="/" className="flex items-center gap-2.5 font-bold text-lg font-heading group">
-                        <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-primary/10 border border-primary/20 transition-colors group-hover:bg-primary/20">
-                            <Wrench className="h-4 w-4 text-primary" />
-                        </div>
+                        <Image
+                            src="/tools-logo-t.png"
+                            alt="StyloFront Tools"
+                            width={32}
+                            height={32}
+                            className="h-8 w-8 object-contain transition-transform group-hover:scale-110"
+                        />
                         <span className="bg-linear-to-r from-foreground to-foreground/80 bg-clip-text">StyloFront Tools</span>
                     </Link>
 
