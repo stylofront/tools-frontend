@@ -1,7 +1,8 @@
 "use client"
 
 import Link from "next/link"
-import { Wrench, Sparkles, Zap, Rocket, Code, Github, Twitter, Mail } from "lucide-react"
+import Image from "next/image"
+import { Sparkles, Zap, Rocket, Code, Github, Twitter, Mail } from "lucide-react"
 import { motion } from "motion/react"
 
 export function Footer() {
@@ -24,9 +25,13 @@ export function Footer() {
                             transition={{ duration: 0.5 }}
                         >
                             <div className="flex items-center gap-2 mb-4">
-                                <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10 border border-primary/20">
-                                    <Wrench className="h-5 w-5 text-primary" />
-                                </div>
+                                <Image
+                                    src="/tools-logo-t.png"
+                                    alt="StyloFront Tools"
+                                    width={32}
+                                    height={32}
+                                    className="h-8 w-8 object-contain"
+                                />
                                 <h3 className="font-bold font-heading text-lg">StyloFront Tools</h3>
                             </div>
                             <p className="text-sm text-muted-foreground leading-relaxed">
