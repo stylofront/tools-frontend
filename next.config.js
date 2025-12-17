@@ -32,6 +32,13 @@ const nextConfig = {
     },
     // Add empty turbopack config to silence the warning
     turbopack: {},
+    webpack: (config) => {
+        config.experiments = {
+            ...config.experiments,
+            asyncWebAssembly: true,
+        }
+        return config
+    },
 }
 
 module.exports = nextConfig

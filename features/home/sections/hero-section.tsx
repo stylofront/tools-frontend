@@ -102,7 +102,7 @@ export function HeroSection() {
                     >
                         <div className="flex items-center gap-2 text-muted-foreground">
                             <Zap className="h-5 w-5 text-primary" />
-                            <span><span className="font-bold text-foreground">18+</span> Tools</span>
+                            <span><span className="font-bold text-foreground">1</span> Tool Available</span>
                         </div>
                         <div className="hidden sm:block w-px h-4 bg-border" />
                         <div className="flex items-center gap-2 text-muted-foreground">

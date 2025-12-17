@@ -1,8 +1,7 @@
-import { HeroSection } from "@/components/landing/hero-section"
-import { ValueProposition } from "@/components/landing/value-proposition"
-import { FeedbackForm } from "@/components/landing/feedback-form"
-import { Footer } from "@/components/landing/footer"
-
+import { HeroSection } from "@/features/home/sections/hero-section"
+import { ValueProposition } from "@/features/home/sections/value-proposition"
+import { FeedbackForm } from "@/features/home/sections/feedback-form"
+import { Footer } from "@/components/layout/footer"
 export default function HomePageContent() {
     return (
         <main className="min-h-screen">

@@ -71,7 +71,7 @@ export default function SearchPageContent() {
                             </span>
                         </h1>
                         <p className="text-base sm:text-lg text-muted-foreground max-w-2xl mx-auto">
-                            Search through our collection of {DUMMY_TOOLS.length}+ developer tools
+                            Search through our collection of developer tools
                         </p>
                     </motion.div>
 
