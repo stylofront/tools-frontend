@@ -1,0 +1,20 @@
+[workspace]
+resolver = "2"
+members = [
+    "image-compressor",
+    "qr-generator",
+    "text-diff",
+    "json-formatter",
+    "regex-tester",
+    "markdown-html",
+    "password-generator",
+    "hash-generator"
+]
+
+[workspace.package]
+version = "0.1.0"
+edition = "2021"
+
+[profile.release]
+opt-level = "s"
+lto = true
