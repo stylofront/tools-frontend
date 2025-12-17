@@ -4,8 +4,8 @@ import { useState, useMemo } from "react"
 import { motion, AnimatePresence } from "motion/react"
 import { Search, Filter, X, ArrowRight, Sparkles } from "lucide-react"
 import { useRouter } from "next/navigation"
-import { DUMMY_TOOLS, TOOL_CATEGORIES, type Tool } from "@/lib/dummy-tools"
 import { cn } from "@/lib/utils"
+import { DUMMY_TOOLS, TOOL_CATEGORIES, type Tool } from "@/lib/dummy-tools"
 
 export default function SearchPageContent() {
     const [searchQuery, setSearchQuery] = useState("")
