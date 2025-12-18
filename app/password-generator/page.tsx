@@ -1,17 +1,26 @@
 import type { Metadata } from "next";
 import PasswordGeneratorContent from "@/features/password-generator";
+import { TOOLS } from "@/lib/tools";
+
+const tool = TOOLS.find(t => t.id === "password-generator")!;
 
 export const metadata: Metadata = {
-    title: "Password Generator - Secure Random Passwords | StyloFront Tools",
-    description: "Generate strong, secure passwords with cryptographic randomness. Customize length and character types.",
-    keywords: ["password generator", "random password", "secure password", "strong password", "password creator"],
+    title: `${tool.name} - Generate Secure Passwords | StyloFront Tools`,
+    description: tool.description,
+    keywords: [...tool.tags, "password", "generate", "secure", "random", "free", "online", "tool", "stylofront"],
     openGraph: {
-        title: "Password Generator - Secure Random Passwords",
-        description: "Generate strong, secure passwords instantly.",
+        title: `${tool.name} - StyloFront Tools`,
+        description: tool.description,
         type: "website",
+        url: `https://tools.stylofront.com${tool.route}`,
+    },
+    twitter: {
+        card: "summary_large_image",
+        title: `${tool.name} - StyloFront Tools`,
+        description: tool.description,
     },
 };
 
-export default function PasswordGeneratorPage() {
+export default function ToolPage() {
     return <PasswordGeneratorContent />;
 }

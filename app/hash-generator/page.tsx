@@ -1,17 +1,26 @@
 import type { Metadata } from "next";
 import HashGeneratorContent from "@/features/hash-generator";
+import { TOOLS } from "@/lib/tools";
+
+const tool = TOOLS.find(t => t.id === "hash-generator")!;
 
 export const metadata: Metadata = {
-    title: "Hash Generator - SHA-1, SHA-256, SHA-512 | StyloFront Tools",
-    description: "Generate SHA-1, SHA-256, SHA-384, and SHA-512 hashes online. Free cryptographic hash generator.",
-    keywords: ["hash generator", "sha256", "sha512", "sha1", "crypto hash", "checksum"],
+    title: `${tool.name} - SHA-256, MD5 Online | StyloFront Tools`,
+    description: tool.description,
+    keywords: [...tool.tags, "hash", "md5", "sha256", "checksum", "security", "free", "online", "tool", "stylofront"],
     openGraph: {
-        title: "Hash Generator - SHA Hashes Online",
-        description: "Generate cryptographic hashes instantly.",
+        title: `${tool.name} - StyloFront Tools`,
+        description: tool.description,
         type: "website",
+        url: `https://tools.stylofront.com${tool.route}`,
+    },
+    twitter: {
+        card: "summary_large_image",
+        title: `${tool.name} - StyloFront Tools`,
+        description: tool.description,
     },
 };
 
-export default function HashGeneratorPage() {
+export default function ToolPage() {
     return <HashGeneratorContent />;
 }

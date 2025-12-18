@@ -4,23 +4,23 @@ import { MetadataRoute } from 'next'
 export const dynamic = 'force-static'
 
 export default function robots(): MetadataRoute.Robots {
-    // Safely get base URL with validation
-    let baseUrl = 'https://tools.stylofront.com'
-
-    // Validate URL format
-    try {
-        new URL(baseUrl)
-    } catch {
-        baseUrl = 'https://tools.stylofront.com'
-    }
+    const baseUrl = 'https://tools.stylofront.com'
 
     return {
         rules: [
             {
                 userAgent: '*',
                 allow: '/',
-                disallow: ['/api/', '/_next/'],
+                disallow: [
+                    '/_next/',
+                    '/api/',
+                    '/static/',
+                ],
             },
+            {
+                userAgent: 'GPTBot',
+                disallow: '/',
+            }
         ],
         sitemap: `${baseUrl}/sitemap.xml`,
     }

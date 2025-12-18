@@ -1,17 +1,26 @@
 import type { Metadata } from "next";
 import LoremIpsumContent from "@/features/lorem-ipsum";
+import { TOOLS } from "@/lib/tools";
+
+const tool = TOOLS.find(t => t.id === "lorem-ipsum")!;
 
 export const metadata: Metadata = {
-    title: "Lorem Ipsum Generator - Placeholder Text Free | StyloFront Tools",
-    description: "Generate lorem ipsum placeholder text for your designs. Create paragraphs, sentences, or words instantly.",
-    keywords: ["lorem ipsum", "placeholder text", "dummy text", "filler text", "text generator"],
+    title: `${tool.name} - Placeholder Text Generator | StyloFront Tools`,
+    description: tool.description,
+    keywords: [...tool.tags, "lorem", "ipsum", "placeholder", "text", "free", "online", "tool", "stylofront"],
     openGraph: {
-        title: "Lorem Ipsum Generator - Placeholder Text",
-        description: "Generate placeholder text for your designs instantly.",
+        title: `${tool.name} - StyloFront Tools`,
+        description: tool.description,
         type: "website",
+        url: `https://tools.stylofront.com${tool.route}`,
+    },
+    twitter: {
+        card: "summary_large_image",
+        title: `${tool.name} - StyloFront Tools`,
+        description: tool.description,
     },
 };
 
-export default function LoremIpsumPage() {
+export default function ToolPage() {
     return <LoremIpsumContent />;
 }

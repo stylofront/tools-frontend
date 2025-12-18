@@ -1,23 +1,26 @@
 import type { Metadata } from "next";
 import ImageCompressorContent from "@/features/image-compressor";
+import { TOOLS } from "@/lib/tools";
+
+const tool = TOOLS.find(t => t.id === "image-compressor")!;
 
 export const metadata: Metadata = {
-    title: "Image Compressor - Compress Images Online Free | StyloFront Tools",
-    description: "Compress images instantly with Rust + WebAssembly. Free online image compressor with quality control. JPEG, PNG, WebP support. 100% private, runs in your browser.",
-    keywords: ["image compressor", "compress image", "reduce image size", "image optimizer", "online image compression", "free image compressor", "wasm", "rust"],
+    title: `${tool.name} - Online Image Optimizer | StyloFront Tools`,
+    description: tool.description,
+    keywords: [...tool.tags, "image", "compress", "optimize", "wasm", "free", "online", "tool", "stylofront"],
     openGraph: {
-        title: "Image Compressor - Compress Images Online Free",
-        description: "Compress images instantly with Rust + WebAssembly. Free, private, and lightning-fast.",
+        title: `${tool.name} - StyloFront Tools`,
+        description: tool.description,
         type: "website",
-        siteName: "StyloFront Tools",
+        url: `https://tools.stylofront.com${tool.route}`,
     },
     twitter: {
         card: "summary_large_image",
-        title: "Image Compressor - StyloFront Tools",
-        description: "Compress images instantly with Rust + WebAssembly. 100% private, runs in your browser.",
+        title: `${tool.name} - StyloFront Tools`,
+        description: tool.description,
     },
 };
 
-export default function ImageCompressorPage() {
+export default function ToolPage() {
     return <ImageCompressorContent />;
 }

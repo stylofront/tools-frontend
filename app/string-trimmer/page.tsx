@@ -1,17 +1,26 @@
 import type { Metadata } from "next";
 import StringTrimmerContent from "@/features/string-trimmer";
+import { TOOLS } from "@/lib/tools";
+
+const tool = TOOLS.find(t => t.id === "string-trimmer")!;
 
 export const metadata: Metadata = {
-    title: "String Trimmer - Clean Text Online Free | StyloFront Tools",
-    description: "Free online string trimmer. Remove extra spaces, trim whitespace, remove duplicates, and sort lines instantly.",
-    keywords: ["string trimmer", "trim text", "remove whitespace", "clean text", "remove duplicates"],
+    title: `${tool.name} - Clean Mesh Text Strings | StyloFront Tools`,
+    description: tool.description,
+    keywords: [...tool.tags, "trim", "whitespace", "clean", "text", "free", "online", "tool", "stylofront"],
     openGraph: {
-        title: "String Trimmer - Clean Text Online Free",
-        description: "Remove extra spaces, duplicates, and clean up your text instantly.",
+        title: `${tool.name} - StyloFront Tools`,
+        description: tool.description,
         type: "website",
+        url: `https://tools.stylofront.com${tool.route}`,
+    },
+    twitter: {
+        card: "summary_large_image",
+        title: `${tool.name} - StyloFront Tools`,
+        description: tool.description,
     },
 };
 
-export default function StringTrimmerPage() {
+export default function ToolPage() {
     return <StringTrimmerContent />;
 }

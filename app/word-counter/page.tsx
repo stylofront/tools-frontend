@@ -1,18 +1,26 @@
 import type { Metadata } from "next";
 import WordCounterContent from "@/features/word-counter";
+import { TOOLS } from "@/lib/tools";
+
+const tool = TOOLS.find(t => t.id === "word-counter")!;
 
 export const metadata: Metadata = {
-    title: "Word Counter - Count Words, Characters Free | StyloFront Tools",
-    description: "Free online word counter tool. Count words, characters, sentences, paragraphs, and get reading time estimates instantly.",
-    keywords: ["word counter", "character counter", "word count", "text counter", "reading time", "free word counter"],
+    title: `${tool.name} - Count Words & Characters | StyloFront Tools`,
+    description: tool.description,
+    keywords: [...tool.tags, "word", "count", "character", "length", "free", "online", "tool", "stylofront"],
     openGraph: {
-        title: "Word Counter - Count Words & Characters Free",
-        description: "Count words, characters, sentences and get reading time estimates instantly.",
+        title: `${tool.name} - StyloFront Tools`,
+        description: tool.description,
         type: "website",
-        siteName: "StyloFront Tools",
+        url: `https://tools.stylofront.com${tool.route}`,
+    },
+    twitter: {
+        card: "summary_large_image",
+        title: `${tool.name} - StyloFront Tools`,
+        description: tool.description,
     },
 };
 
-export default function WordCounterPage() {
+export default function ToolPage() {
     return <WordCounterContent />;
 }

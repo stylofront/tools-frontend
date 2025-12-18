@@ -2,20 +2,20 @@
 
 import { useState, useMemo } from "react"
 import { motion, AnimatePresence } from "motion/react"
-import { Search, Filter, X, ArrowRight, Sparkles } from "lucide-react"
+import { Search, Filter, X, ArrowRight, Sparkles, Zap } from "lucide-react"
 import { useRouter } from "next/navigation"
 import { cn } from "@/lib/utils"
-import { DUMMY_TOOLS, TOOL_CATEGORIES, type Tool } from "@/lib/dummy-tools"
+import { TOOLS, TOOL_CATEGORIES, type Tool, type ToolCategory } from "@/lib/tools"
 
 export default function SearchPageContent() {
     const [searchQuery, setSearchQuery] = useState("")
-    const [selectedCategory, setSelectedCategory] = useState<string>("All")
+    const [selectedCategory, setSelectedCategory] = useState<ToolCategory | "All">("All")
     const [isFilterOpen, setIsFilterOpen] = useState(false)
     const router = useRouter()
 
     // Filter tools based on search and category
     const filteredTools = useMemo(() => {
-        let tools = DUMMY_TOOLS
+        let tools = TOOLS
 
         // Filter by category
         if (selectedCategory !== "All") {
@@ -40,7 +40,7 @@ export default function SearchPageContent() {
         router.push(tool.route)
     }
 
-    const categories = ["All", ...TOOL_CATEGORIES]
+    const categories: ("All" | ToolCategory)[] = ["All", ...TOOL_CATEGORIES]
 
     return (
         <div className="min-h-screen bg-background">
@@ -62,7 +62,7 @@ export default function SearchPageContent() {
                     >
                         <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 backdrop-blur-sm mb-6">
                             <Sparkles className="h-4 w-4 text-primary animate-pulse" />
-                            <span className="text-sm font-medium text-primary">Discover Tools</span>
+                            <span className="text-sm font-medium text-primary">Discover 40+ Tools</span>
                         </div>
 
                         <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-4">
@@ -71,7 +71,7 @@ export default function SearchPageContent() {
                             </span>
                         </h1>
                         <p className="text-base sm:text-lg text-muted-foreground max-w-2xl mx-auto">
-                            Search through our collection of developer tools
+                            Search through our curated collection of lighting-fast tools
                         </p>
                     </motion.div>
 
@@ -92,7 +92,7 @@ export default function SearchPageContent() {
                                     type="text"
                                     value={searchQuery}
                                     onChange={(e) => setSearchQuery(e.target.value)}
-                                    placeholder="Search by name, description, or tags..."
+                                    placeholder="Search 40+ tools by name, description, tags..."
                                     className="w-full pl-14 pr-14 py-5 bg-transparent text-base md:text-lg outline-none placeholder:text-muted-foreground/60"
                                 />
 
@@ -109,12 +109,7 @@ export default function SearchPageContent() {
                     </motion.div>
 
                     {/* Category Filter */}
-                    <motion.div
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.6, delay: 0.2 }}
-                        className="flex items-center justify-center gap-4 mb-4"
-                    >
+                    <div className="flex items-center justify-center gap-4 mb-4">
                         {/* Mobile Filter Toggle */}
                         <button
                             onClick={() => setIsFilterOpen(!isFilterOpen)}
@@ -141,7 +136,7 @@ export default function SearchPageContent() {
                                 </button>
                             ))}
                         </div>
-                    </motion.div>
+                    </div>
 
                     {/* Mobile Category Filter Dropdown */}
                     <AnimatePresence>
@@ -185,10 +180,11 @@ export default function SearchPageContent() {
             {/* Tools Grid */}
             <section className="pb-24">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <AnimatePresence mode="wait">
+                    <AnimatePresence mode="popLayout">
                         {filteredTools.length > 0 ? (
                             <motion.div
                                 key="tools-grid"
+                                layout
                                 initial={{ opacity: 0 }}
                                 animate={{ opacity: 1 }}
                                 exit={{ opacity: 0 }}
@@ -199,11 +195,16 @@ export default function SearchPageContent() {
                                     return (
                                         <motion.button
                                             key={tool.id}
-                                            initial={{ opacity: 0, y: 20 }}
-                                            animate={{ opacity: 1, y: 0 }}
-                                            transition={{ duration: 0.3, delay: index * 0.05 }}
+                                            layout
+                                            initial={{ opacity: 0, scale: 0.9 }}
+                                            animate={{ opacity: 1, scale: 1 }}
+                                            exit={{ opacity: 0, scale: 0.9 }}
+                                            transition={{
+                                                duration: 0.3,
+                                                delay: index < 9 ? index * 0.05 : 0 // Only animate first batch
+                                            }}
                                             onClick={() => handleToolClick(tool)}
-                                            whileHover={{ y: -8, transition: { duration: 0.2 } }}
+                                            whileHover={{ y: -8 }}
                                             className="group relative text-left"
                                         >
                                             {/* Card Glow */}
@@ -211,6 +212,21 @@ export default function SearchPageContent() {
 
                                             {/* Card */}
                                             <div className="relative h-full bg-background/50 backdrop-blur-sm border-2 border-border hover:border-primary/30 rounded-2xl p-6 transition-all duration-300">
+                                                {/* Badges */}
+                                                <div className="absolute top-4 right-4 flex gap-2">
+                                                    {tool.isWasm && (
+                                                        <div className="px-2 py-0.5 rounded-md bg-orange-500/10 border border-orange-500/20 text-[10px] font-bold text-orange-500 flex items-center gap-1">
+                                                            <Zap className="h-2.5 w-2.5" />
+                                                            WASM
+                                                        </div>
+                                                    )}
+                                                    {tool.isNew && (
+                                                        <div className="px-2 py-0.5 rounded-md bg-blue-500/10 border border-blue-500/20 text-[10px] font-bold text-blue-500 uppercase tracking-wider">
+                                                            New
+                                                        </div>
+                                                    )}
+                                                </div>
+
                                                 {/* Icon */}
                                                 <div className="inline-flex items-center justify-center w-12 h-12 rounded-xl bg-primary/10 border-2 border-primary/20 mb-4 group-hover:scale-110 transition-transform duration-300">
                                                     <Icon className="h-6 w-6 text-primary" />
@@ -235,7 +251,7 @@ export default function SearchPageContent() {
                                                 </div>
 
                                                 {/* Decorative Element */}
-                                                <div className="absolute top-4 right-4 w-20 h-20 bg-gradient-to-br from-primary/5 to-transparent rounded-full blur-2xl group-hover:scale-150 transition-transform duration-500" />
+                                                <div className="absolute top-4 right-4 w-20 h-20 bg-gradient-to-br from-primary/5 to-transparent rounded-full blur-2xl group-hover:scale-150 transition-transform duration-500 -z-10" />
                                             </div>
                                         </motion.button>
                                     )

@@ -1,17 +1,26 @@
 import type { Metadata } from "next";
 import TextDiffContent from "@/features/text-diff";
+import { TOOLS } from "@/lib/tools";
+
+const tool = TOOLS.find(t => t.id === "text-diff")!;
 
 export const metadata: Metadata = {
-    title: "Text Diff Checker - Compare Texts Online | StyloFront Tools",
-    description: "Compare two texts and find differences instantly. Free online diff checker with split and inline views.",
-    keywords: ["text diff", "compare text", "diff checker", "text comparison", "find differences"],
+    title: `${tool.name} - Compare Text Differences | StyloFront Tools`,
+    description: tool.description,
+    keywords: [...tool.tags, "diff", "compare", "text", "difference", "free", "online", "tool", "stylofront"],
     openGraph: {
-        title: "Text Diff Checker - Compare Texts Online",
-        description: "Find differences between two texts instantly.",
+        title: `${tool.name} - StyloFront Tools`,
+        description: tool.description,
         type: "website",
+        url: `https://tools.stylofront.com${tool.route}`,
+    },
+    twitter: {
+        card: "summary_large_image",
+        title: `${tool.name} - StyloFront Tools`,
+        description: tool.description,
     },
 };
 
-export default function TextDiffPage() {
+export default function ToolPage() {
     return <TextDiffContent />;
 }

@@ -1,17 +1,26 @@
 import type { Metadata } from "next";
-import UUIDGeneratorContent from "@/features/uuid-generator";
+import UuidGeneratorContent from "@/features/uuid-generator";
+import { TOOLS } from "@/lib/tools";
+
+const tool = TOOLS.find(t => t.id === "uuid-generator")!;
 
 export const metadata: Metadata = {
-    title: "UUID Generator - Generate Unique IDs Free | StyloFront Tools",
-    description: "Generate UUID v4 unique identifiers instantly. Create multiple UUIDs in different formats for your applications.",
-    keywords: ["uuid generator", "guid generator", "unique id", "uuid v4", "random uuid"],
+    title: `${tool.name} - Generate Unique IDs | StyloFront Tools`,
+    description: tool.description,
+    keywords: [...tool.tags, "uuid", "guid", "generator", "id", "free", "online", "tool", "stylofront"],
     openGraph: {
-        title: "UUID Generator - Generate Unique IDs",
-        description: "Generate UUID v4 unique identifiers instantly.",
+        title: `${tool.name} - StyloFront Tools`,
+        description: tool.description,
         type: "website",
+        url: `https://tools.stylofront.com${tool.route}`,
+    },
+    twitter: {
+        card: "summary_large_image",
+        title: `${tool.name} - StyloFront Tools`,
+        description: tool.description,
     },
 };
 
-export default function UUIDGeneratorPage() {
-    return <UUIDGeneratorContent />;
+export default function ToolPage() {
+    return <UuidGeneratorContent />;
 }

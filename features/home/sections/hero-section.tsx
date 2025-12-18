@@ -4,7 +4,7 @@ import { TypingAnimation } from "@/components/ui/typing-animation"
 import { motion } from "motion/react"
 import { DotPattern } from "@/components/ui/dot-pattern"
 import { ToolSearch } from "./tool-search"
-import { Sparkles, Zap } from "lucide-react"
+import { Sparkles, Zap, Cpu } from "lucide-react"
 import { VelocityScroll } from "@/components/ui/scroll-based-velocity"
 
 export function HeroSection() {
@@ -58,14 +58,21 @@ export function HeroSection() {
                     >
                         <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight">
                             <span className="inline-block bg-gradient-to-r from-foreground via-foreground/90 to-foreground/80 bg-clip-text text-transparent">
-                                Developer Tools
+                                40+ Powerful Tools
                             </span>
                             <br />
                             <TypingAnimation
                                 className="inline-block bg-gradient-to-r from-primary via-primary/80 to-primary/60 bg-clip-text text-transparent animate-gradient leading-tight"
                                 duration={100}
                                 startOnView={true}
-                                words={["Made Simple", "Made Faster", "Made Beautiful", "For Everyone", "With Rust"]}
+                                words={[
+                                    "Powered by Rust",
+                                    "Lighting Fast",
+                                    "Privacy First",
+                                    "Always Free",
+                                    "WASM Powered",
+                                    "Open Source"
+                                ]}
                                 loop={true}
                             />
                         </h1>
@@ -78,9 +85,8 @@ export function HeroSection() {
                         transition={{ duration: 0.7, delay: 0.2 }}
                         className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed"
                     >
-                        Lightning-fast tools built with Rust. No sign-ups, no payments, no hassle.
-                        <br className="hidden sm:block" />
-                        Just search, click, and create.
+                        The ultimate developer collection. Blazing fast, no sign-ups,
+                        and built with modern technology like Rust + WebAssembly.
                     </motion.p>
 
                     {/* Search Box */}
@@ -100,19 +106,25 @@ export function HeroSection() {
                         transition={{ duration: 0.7, delay: 0.5 }}
                         className="flex flex-wrap items-center justify-center gap-6 sm:gap-8 pt-8 pb-12 text-sm"
                     >
-                        <div className="flex items-center gap-2 text-muted-foreground">
-                            <Zap className="h-5 w-5 text-primary" />
-                            <span><span className="font-bold text-foreground">17</span> Tools</span>
+                        <div className="flex items-center gap-2 text-muted-foreground group">
+                            <div className="p-2 rounded-lg bg-primary/10 group-hover:bg-primary/20 transition-colors">
+                                <Zap className="h-4 w-4 text-primary" />
+                            </div>
+                            <span><span className="font-bold text-foreground">40+</span> Tools</span>
                         </div>
                         <div className="hidden sm:block w-px h-4 bg-border" />
-                        <div className="flex items-center gap-2 text-muted-foreground">
-                            <Sparkles className="h-5 w-5 text-primary" />
-                            <span><span className="font-bold text-foreground">100%</span> Free</span>
+                        <div className="flex items-center gap-2 text-muted-foreground group">
+                            <div className="p-2 rounded-lg bg-green-500/10 group-hover:bg-green-500/20 transition-colors">
+                                <Sparkles className="h-4 w-4 text-green-500" />
+                            </div>
+                            <span><span className="font-bold text-foreground">100%</span> Private</span>
                         </div>
                         <div className="hidden sm:block w-px h-4 bg-border" />
-                        <div className="flex items-center gap-2 text-muted-foreground">
-                            <Zap className="h-5 w-5 text-primary" />
-                            <span><span className="font-bold text-foreground">Rust</span> Powered</span>
+                        <div className="flex items-center gap-2 text-muted-foreground group">
+                            <div className="p-2 rounded-lg bg-orange-500/10 group-hover:bg-orange-500/20 transition-colors">
+                                <Cpu className="h-4 w-4 text-orange-500" />
+                            </div>
+                            <span><span className="font-bold text-foreground">Rust</span> Engine</span>
                         </div>
                     </motion.div>
                 </div>

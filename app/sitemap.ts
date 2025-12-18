@@ -1,4 +1,5 @@
 import { MetadataRoute } from 'next'
+import { TOOLS } from '@/lib/tools'
 
 // Required for static export
 export const dynamic = 'force-static'
@@ -14,28 +15,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
         baseUrl = 'https://tools.stylofront.com'
     }
 
-    // All tool routes
-    const tools = [
-        'base64',
-        'color-picker',
-        'hash-generator',
-        'image-compressor',
-        'json-formatter',
-        'lorem-ipsum',
-        'markdown-html',
-        'password-generator',
-        'qr-generator',
-        'regex-tester',
-        'search',
-        'string-trimmer',
-        'text-diff',
-        'text-formatter',
-        'unit-converter',
-        'url-encoder',
-        'uuid-generator',
-        'word-counter',
-    ]
-
     // Base sitemap entries
     const sitemapEntries: MetadataRoute.Sitemap = [
         {
@@ -46,14 +25,17 @@ export default function sitemap(): MetadataRoute.Sitemap {
         },
     ]
 
-    // Add tool entries
-    tools.forEach((tool) => {
-        sitemapEntries.push({
-            url: `${baseUrl}/${tool}`,
-            lastModified: new Date(),
-            changeFrequency: 'monthly',
-            priority: 0.8,
-        })
+    // Add tool entries from TOOLS array
+    TOOLS.forEach((tool) => {
+        // Only include available tools
+        if (tool.isAvailable) {
+            sitemapEntries.push({
+                url: `${baseUrl}${tool.route}`,
+                lastModified: new Date(),
+                changeFrequency: 'monthly',
+                priority: tool.isNew ? 0.9 : 0.8,
+            })
+        }
     })
 
     return sitemapEntries

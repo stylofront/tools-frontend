@@ -1,17 +1,26 @@
 import type { Metadata } from "next";
 import JsonFormatterContent from "@/features/json-formatter";
+import { TOOLS } from "@/lib/tools";
+
+const tool = TOOLS.find(t => t.id === "json-formatter")!;
 
 export const metadata: Metadata = {
-    title: "JSON Formatter - Format, Validate, Minify | StyloFront Tools",
-    description: "Format, validate, and minify JSON data online. Free JSON beautifier with syntax validation.",
-    keywords: ["json formatter", "json beautifier", "json validator", "json minifier", "format json"],
+    title: `${tool.name} - Prettify & Validate JSON | StyloFront Tools`,
+    description: tool.description,
+    keywords: [...tool.tags, "json", "formatter", "prettify", "validate", "free", "online", "tool", "stylofront"],
     openGraph: {
-        title: "JSON Formatter - Format & Validate JSON",
-        description: "Format, validate, and minify JSON data instantly.",
+        title: `${tool.name} - StyloFront Tools`,
+        description: tool.description,
         type: "website",
+        url: `https://tools.stylofront.com${tool.route}`,
+    },
+    twitter: {
+        card: "summary_large_image",
+        title: `${tool.name} - StyloFront Tools`,
+        description: tool.description,
     },
 };
 
-export default function JsonFormatterPage() {
+export default function ToolPage() {
     return <JsonFormatterContent />;
 }

@@ -1,17 +1,26 @@
 import type { Metadata } from "next";
-import MarkdownHtmlContent from "@/features/markdown-html";
+import MarkdownToHtmlContent from "@/features/markdown-html";
+import { TOOLS } from "@/lib/tools";
+
+const tool = TOOLS.find(t => t.id === "markdown-html")!;
 
 export const metadata: Metadata = {
-    title: "Markdown to HTML - Convert MD to HTML | StyloFront Tools",
-    description: "Convert Markdown to HTML instantly with live preview. Free online markdown converter.",
-    keywords: ["markdown to html", "md to html", "markdown converter", "markdown preview", "html generator"],
+    title: `${tool.name} - Convert MD to HTML | StyloFront Tools`,
+    description: tool.description,
+    keywords: [...tool.tags, "markdown", "html", "convert", "transform", "free", "online", "tool", "stylofront"],
     openGraph: {
-        title: "Markdown to HTML Converter",
-        description: "Convert Markdown to HTML with live preview.",
+        title: `${tool.name} - StyloFront Tools`,
+        description: tool.description,
         type: "website",
+        url: `https://tools.stylofront.com${tool.route}`,
+    },
+    twitter: {
+        card: "summary_large_image",
+        title: `${tool.name} - StyloFront Tools`,
+        description: tool.description,
     },
 };
 
-export default function MarkdownHtmlPage() {
-    return <MarkdownHtmlContent />;
+export default function ToolPage() {
+    return <MarkdownToHtmlContent />;
 }

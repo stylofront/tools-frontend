@@ -1,17 +1,26 @@
 import type { Metadata } from "next";
 import RegexTesterContent from "@/features/regex-tester";
+import { TOOLS } from "@/lib/tools";
+
+const tool = TOOLS.find(t => t.id === "regex-tester")!;
 
 export const metadata: Metadata = {
-    title: "Regex Tester - Test Regular Expressions | StyloFront Tools",
-    description: "Test and validate regular expressions with real-time matching. Free online regex tester with highlighting.",
-    keywords: ["regex tester", "regular expression", "regex validator", "pattern matching", "regex online"],
+    title: `${tool.name} - Test Regular Expressions | StyloFront Tools`,
+    description: tool.description,
+    keywords: [...tool.tags, "regex", "tester", "pattern", "match", "free", "online", "tool", "stylofront"],
     openGraph: {
-        title: "Regex Tester - Test Regular Expressions",
-        description: "Test and validate regex patterns instantly.",
+        title: `${tool.name} - StyloFront Tools`,
+        description: tool.description,
         type: "website",
+        url: `https://tools.stylofront.com${tool.route}`,
+    },
+    twitter: {
+        card: "summary_large_image",
+        title: `${tool.name} - StyloFront Tools`,
+        description: tool.description,
     },
 };
 
-export default function RegexTesterPage() {
+export default function ToolPage() {
     return <RegexTesterContent />;
 }

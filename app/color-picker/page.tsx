@@ -1,17 +1,26 @@
 import type { Metadata } from "next";
 import ColorPickerContent from "@/features/color-picker";
+import { TOOLS } from "@/lib/tools";
+
+const tool = TOOLS.find(t => t.id === "color-picker")!;
 
 export const metadata: Metadata = {
-    title: "Color Picker - HEX RGB HSL Converter | StyloFront Tools",
-    description: "Pick any color and convert between HEX, RGB, HSL formats. Free online color picker with shade generator.",
-    keywords: ["color picker", "hex to rgb", "rgb to hex", "color converter", "hsl", "color palette"],
+    title: `${tool.name} - Online Color Selector | StyloFront Tools`,
+    description: tool.description,
+    keywords: [...tool.tags, "color", "picker", "hex", "rgb", "design", "free", "online", "tool", "stylofront"],
     openGraph: {
-        title: "Color Picker - HEX RGB HSL Converter",
-        description: "Pick and convert colors between different formats instantly.",
+        title: `${tool.name} - StyloFront Tools`,
+        description: tool.description,
         type: "website",
+        url: `https://tools.stylofront.com${tool.route}`,
+    },
+    twitter: {
+        card: "summary_large_image",
+        title: `${tool.name} - StyloFront Tools`,
+        description: tool.description,
     },
 };
 
-export default function ColorPickerPage() {
+export default function ToolPage() {
     return <ColorPickerContent />;
 }

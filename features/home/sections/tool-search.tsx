@@ -4,7 +4,7 @@ import { useState, useRef, useEffect } from "react"
 import { useRouter } from "next/navigation"
 import { Search, ArrowRight } from "lucide-react"
 import { motion, AnimatePresence } from "motion/react"
-import { searchTools, type Tool } from "@/lib/dummy-tools"
+import { searchTools, type Tool } from "@/lib/tools"
 import { cn } from "@/lib/utils"
 
 export function ToolSearch() {

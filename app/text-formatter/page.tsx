@@ -1,18 +1,26 @@
 import type { Metadata } from "next";
 import TextFormatterContent from "@/features/text-formatter";
+import { TOOLS } from "@/lib/tools";
+
+const tool = TOOLS.find(t => t.id === "text-formatter")!;
 
 export const metadata: Metadata = {
-    title: "Text Formatter - Transform Text Cases Free | StyloFront Tools",
-    description: "Free online text formatter. Convert to uppercase, lowercase, title case, camelCase, snake_case and more instantly.",
-    keywords: ["text formatter", "case converter", "uppercase", "lowercase", "title case", "camelCase", "snake_case"],
+    title: `${tool.name} - Format & Transform Text | StyloFront Tools`,
+    description: tool.description,
+    keywords: [...tool.tags, "text", "format", "transform", "case", "free", "online", "tool", "stylofront"],
     openGraph: {
-        title: "Text Formatter - Transform Text Cases Free",
-        description: "Convert text to any case format instantly. Free online tool.",
+        title: `${tool.name} - StyloFront Tools`,
+        description: tool.description,
         type: "website",
-        siteName: "StyloFront Tools",
+        url: `https://tools.stylofront.com${tool.route}`,
+    },
+    twitter: {
+        card: "summary_large_image",
+        title: `${tool.name} - StyloFront Tools`,
+        description: tool.description,
     },
 };
 
-export default function TextFormatterPage() {
+export default function ToolPage() {
     return <TextFormatterContent />;
 }

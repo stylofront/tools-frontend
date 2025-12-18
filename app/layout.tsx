@@ -50,6 +50,10 @@ export default function RootLayout({
     return (
         <html lang="en" suppressHydrationWarning className={`${outfit.variable} ${spaceGrotesk.variable}`}>
             <head>
+                <meta charSet="UTF-8" />
+                <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
+                <meta name="robots" content="index, follow" />
+                <meta name="googlebot" content="index, follow" />
                 <meta name="viewport" content="width=device-width, initial-scale=1" />
                 <meta name="og:image" content="/ogimage.png" />
                 <meta name="twitter:image" content="/ogimage.png" />
