@@ -69,7 +69,7 @@ export const TOOLS: Tool[] = [
     {
         id: "image-compressor",
         name: "Image Compressor",
-        description: "Compress images instantly with Rust + WebAssembly",
+        description: "Compress and optimize your images instantly with high-quality results. Our Rust-powered tool reduces file size without losing quality, perfect for web optimization.",
         category: "Image Tools",
         icon: ImageIcon,
         route: "/image-compressor",
@@ -80,7 +80,7 @@ export const TOOLS: Tool[] = [
     {
         id: "qr-generator",
         name: "QR Code Generator",
-        description: "Generate custom QR codes instantly",
+        description: "Generate custom, high-resolution QR codes for URLs, text, or contact info instantly. Perfect for marketing materials, websites, and business cards.",
         category: "Image Tools",
         icon: QrCode,
         route: "/qr-generator",
@@ -90,7 +90,7 @@ export const TOOLS: Tool[] = [
     {
         id: "color-picker",
         name: "Color Picker",
-        description: "Pick and convert colors in any format",
+        description: "Professional color picker and palette generator. Extract HEX, RGB, HSL, and CMYK values with ease. A must-have tool for designers and front-end developers.",
         category: "Image Tools",
         icon: Palette,
         route: "/color-picker",
@@ -100,7 +100,7 @@ export const TOOLS: Tool[] = [
     {
         id: "svg-to-png",
         name: "SVG to PNG",
-        description: "Convert SVG vectors to PNG images",
+        description: "Convert scalable vector graphics (SVG) to high-quality PNG images instantly. Preserve transparency and clarity with our fast, browser-based conversion tool.",
         category: "Image Tools",
         icon: Layers,
         route: "/svg-to-png",
@@ -111,7 +111,7 @@ export const TOOLS: Tool[] = [
     {
         id: "image-resizer",
         name: "Image Resizer",
-        description: "Resize and crop images with precision",
+        description: "Batch resize and crop your images with pixel-perfect precision. Adjust dimensions for social media, web, or print while maintaining the perfect aspect ratio.",
         category: "Image Tools",
         icon: Maximize,
         route: "/image-resizer",
@@ -122,7 +122,7 @@ export const TOOLS: Tool[] = [
     {
         id: "exif-remover",
         name: "EXIF Remover",
-        description: "Remove metadata from images for privacy",
+        description: "Protect your privacy by stripping sensitive EXIF metadata from your photos. Remove GPS coordinates, camera settings, and personal data before sharing online.",
         category: "Image Tools",
         icon: Shield,
         route: "/exif-remover",
@@ -135,7 +135,7 @@ export const TOOLS: Tool[] = [
     {
         id: "text-formatter",
         name: "Text Formatter",
-        description: "Format and transform text with ease",
+        description: "Easily clean and transform your text with multiple formatting options. Remove extra spaces, fix line breaks, and prettify messy content in seconds.",
         category: "Text Tools",
         icon: Type,
         route: "/text-formatter",
@@ -145,7 +145,7 @@ export const TOOLS: Tool[] = [
     {
         id: "word-counter",
         name: "Word Counter",
-        description: "Count words, characters, and lines",
+        description: "Advanced word and character counter with real-time statistics. Track word count, character count, sentence count, and estimated reading time precisely.",
         category: "Text Tools",
         icon: FileText,
         route: "/word-counter",
@@ -155,7 +155,7 @@ export const TOOLS: Tool[] = [
     {
         id: "text-diff",
         name: "Text Diff Checker",
-        description: "Compare two texts and find differences",
+        description: "Compare two pieces of text side-by-side to highlight differences instantly. Perfect for reviewing code changes, document versions, or repetitive content.",
         category: "Text Tools",
         icon: GitCompare,
         route: "/text-diff",
@@ -166,7 +166,7 @@ export const TOOLS: Tool[] = [
     {
         id: "case-converter",
         name: "Case Converter",
-        description: "Convert text between upper, lower, camel cases",
+        description: "Instant text case conversion between UPPERCASE, lowercase, camelCase, PascalCase, and more. Clean up your variable names or document headings easily.",
         category: "Text Tools",
         icon: RefreshCw,
         route: "/case-converter",
@@ -177,7 +177,7 @@ export const TOOLS: Tool[] = [
     {
         id: "duplicate-remover",
         name: "Duplicate Remover",
-        description: "Remove duplicate lines from your text",
+        description: "Quickly remove duplicate lines or items from any list. Clean up your datasets, email lists, or code logs with our efficient deduplication utility.",
         category: "Text Tools",
         icon: Scissors,
         route: "/duplicate-remover",
@@ -188,7 +188,7 @@ export const TOOLS: Tool[] = [
     {
         id: "lorem-ipsum",
         name: "Lorem Ipsum",
-        description: "Generate placeholder text for layouts",
+        description: "Generate customized placeholder text for your designs and mockups. Choose word, sentence, or paragraph counts to perfectly fit your layout needs.",
         category: "Text Tools",
         icon: Type,
         route: "/lorem-ipsum",
@@ -200,7 +200,7 @@ export const TOOLS: Tool[] = [
     {
         id: "json-formatter",
         name: "JSON Formatter",
-        description: "Format and validate JSON data",
+        description: "Format, validate, and prettify JSON data instantly. Turn messy JSON strings into readable, well-structured objects with syntax highlighting and error checking.",
         category: "Code Tools",
         icon: FileJson,
         route: "/json-formatter",
@@ -211,7 +211,7 @@ export const TOOLS: Tool[] = [
     {
         id: "code-minifier",
         name: "Code Minifier",
-        description: "Minify JS, CSS, and HTML code",
+        description: "Reduce file size for JavaScript, CSS, and HTML by removing unnecessary characters. Optimize your website performance with our fast code minification tool.",
         category: "Code Tools",
         icon: Binary,
         route: "/code-minifier",
@@ -222,7 +222,7 @@ export const TOOLS: Tool[] = [
     {
         id: "sql-formatter",
         name: "SQL Formatter",
-        description: "Beautify and format SQL queries",
+        description: "Professional SQL query beautifier. Format complex SQL queries for better readability across various dialects including MySQL, PostgreSQL, and SQL Server.",
         category: "Code Tools",
         icon: Database,
         route: "/sql-formatter",
@@ -233,7 +233,7 @@ export const TOOLS: Tool[] = [
     {
         id: "regex-tester",
         name: "Regex Tester",
-        description: "Test and validate regular expressions",
+        description: "Test and debug regular expressions in real-time. Validate your patterns against sample text with instant results and clear highlight markers.",
         category: "Code Tools",
         icon: Code2,
         route: "/regex-tester",
@@ -244,7 +244,7 @@ export const TOOLS: Tool[] = [
     {
         id: "base64",
         name: "Base64 Encoder",
-        description: "Encode/Decode Base64 strings",
+        description: "Encode and decode text or files to Base64 format securely. Essential for data transmission, embedding images, or handling binary data in web apps.",
         category: "Code Tools",
         icon: FileCode,
         route: "/base64",
@@ -254,7 +254,7 @@ export const TOOLS: Tool[] = [
     {
         id: "url-encoder",
         name: "URL Encoder",
-        description: "Encode/Decode URL strings",
+        description: "Encode and decode URLs to ensure safe transmission of web data. Safely handle special characters and parameters for clean, valid URI strings.",
         category: "Code Tools",
         icon: Globe,
         route: "/url-encoder",
@@ -266,7 +266,7 @@ export const TOOLS: Tool[] = [
     {
         id: "markdown-html",
         name: "Markdown to HTML",
-        description: "Convert Markdown to clean HTML",
+        description: "Convert Markdown syntax to clean, semantic HTML instantly. Perfect for blog posts, documentation, and previewing README files with ease.",
         category: "Converters",
         icon: FileDigit,
         route: "/markdown-html",
@@ -277,7 +277,7 @@ export const TOOLS: Tool[] = [
     {
         id: "yaml-json",
         name: "YAML to JSON",
-        description: "Convert between YAML and JSON formats",
+        description: "Seamlessly convert between YAML and JSON formats. Transition your configuration files between formats while maintaining structure and data integrity.",
         category: "Converters",
         icon: RefreshCw,
         route: "/yaml-json",
@@ -288,7 +288,7 @@ export const TOOLS: Tool[] = [
     {
         id: "csv-json",
         name: "CSV to JSON",
-        description: "Convert CSV data to JSON objects",
+        description: "Convert CSV data to structured JSON objects instantly. Transform spreadsheet data into developer-friendly formats for API testing or database imports.",
         category: "Converters",
         icon: FileJson,
         route: "/csv-json",
@@ -299,7 +299,7 @@ export const TOOLS: Tool[] = [
     {
         id: "unit-converter",
         name: "Unit Converter",
-        description: "Convert between common units",
+        description: "All-in-one converter for length, weight, temperature, and more. Get accurate conversions across metric and imperial systems with our simple interface.",
         category: "Converters",
         icon: Calculator,
         route: "/unit-converter",
@@ -311,7 +311,7 @@ export const TOOLS: Tool[] = [
     {
         id: "password-generator",
         name: "Password Generator",
-        description: "Generate strong, secure passwords",
+        description: "Create ultra-secure, random passwords with cryptographic strength. Customize length and complexity to protect your accounts from brute-force attacks.",
         category: "Security",
         icon: Key,
         route: "/password-generator",
@@ -322,7 +322,7 @@ export const TOOLS: Tool[] = [
     {
         id: "hash-generator",
         name: "Hash Generator",
-        description: "Generate MD5, SHA-256 hashes",
+        description: "Generate secure cryptographic hashes like MD5, SHA-256, and SHA-512. Perfect for verifying file integrity or securely storing sensitive data identifiers.",
         category: "Security",
         icon: Hash,
         route: "/hash-generator",
@@ -333,7 +333,7 @@ export const TOOLS: Tool[] = [
     {
         id: "bcrypt-generator",
         name: "Bcrypt Hash",
-        description: "Generate and verify Bcrypt hashes",
+        description: "Generate and verify Bcrypt hashes for production-grade security. Used by professional developers for secure password hashing and authentication flows.",
         category: "Security",
         icon: ShieldCheck,
         route: "/bcrypt-generator",
@@ -345,7 +345,7 @@ export const TOOLS: Tool[] = [
     {
         id: "jwt-decoder",
         name: "JWT Decoder",
-        description: "Decode and inspect JWT tokens",
+        description: "Decode and inspect JSON Web Tokens (JWT) safely. View header and payload data instantly without sending your sensitive tokens to any server.",
         category: "Security",
         icon: FileSignature,
         route: "/jwt-decoder",
@@ -356,7 +356,7 @@ export const TOOLS: Tool[] = [
     {
         id: "password-strength",
         name: "Password Strength",
-        description: "Analyze and test your password security",
+        description: "Analyze the security level of your passwords. Get instant feedback on entropy, complexity, and potential vulnerabilities to keep your data safe.",
         category: "Security",
         icon: ShieldCheck,
         route: "/password-strength",
@@ -369,7 +369,7 @@ export const TOOLS: Tool[] = [
     {
         id: "uuid-generator",
         name: "UUID Generator",
-        description: "Generate version 4 unique IDs",
+        description: "Generate unique version 4 UUIDs (GUIDs) instantly. Reliable and cryptographically secure identifiers for your database entries and software projects.",
         category: "Utility",
         icon: FileDigit,
         route: "/uuid-generator",
@@ -379,7 +379,7 @@ export const TOOLS: Tool[] = [
     {
         id: "timestamp-converter",
         name: "Epoch Converter",
-        description: "Convert UNIX timestamps to dates",
+        description: "Convert UNIX timestamps to human-readable dates and vice-versa. Easily handle time zones and various time formats for your development projects.",
         category: "Utility",
         icon: Clock,
         route: "/timestamp-converter",
@@ -390,7 +390,7 @@ export const TOOLS: Tool[] = [
     {
         id: "favicon-generator",
         name: "Favicon Gen",
-        description: "Generate favicons for websites",
+        description: "Create professional favicons for your website from images or text. Generate all necessary sizes and formats, including ICO and PNG files, in seconds.",
         category: "Utility",
         icon: Layout,
         route: "/favicon-generator",
@@ -401,7 +401,7 @@ export const TOOLS: Tool[] = [
     {
         id: "whois-lookup",
         name: "Whois Lookup",
-        description: "Get domain registration info",
+        description: "Perform instant WHOIS lookups to get domain registration details. Check ownership, expiration dates, and nameserver info for any domain name.",
         category: "Utility",
         icon: SearchIcon,
         route: "/whois-lookup",
@@ -414,7 +414,7 @@ export const TOOLS: Tool[] = [
     {
         id: "robots-generator",
         name: "Robots.txt Gen",
-        description: "Generate robots.txt for SEO",
+        description: "Easily generate custom robots.txt files to manage search engine crawling. Protect sensitive areas of your site and improve SEO with proper directives.",
         category: "SEO Tools",
         icon: Cpu,
         route: "/robots-generator",
@@ -425,7 +425,7 @@ export const TOOLS: Tool[] = [
     {
         id: "sitemap-generator",
         name: "Sitemap Gen",
-        description: "Generate XML sitemaps easily",
+        description: "Generate XML sitemaps to help search engines index your website efficiently. Ensure all your important pages are discovered and ranked properly.",
         category: "SEO Tools",
         icon: FolderTree,
         route: "/sitemap-generator",
@@ -436,7 +436,7 @@ export const TOOLS: Tool[] = [
     {
         id: "html-validator",
         name: "HTML Validator",
-        description: "Check HTML for SEO and errors",
+        description: "Check your HTML code for errors and SEO best practices. Improve page load speed and search ranking by ensuring clean, valid, and semantic markup.",
         category: "SEO Tools",
         icon: ShieldCheck,
         route: "/html-validator",
@@ -447,7 +447,7 @@ export const TOOLS: Tool[] = [
     {
         id: "meta-tag-generator",
         name: "Meta Tag Gen",
-        description: "Generate SEO meta tags",
+        description: "Generate all essential SEO meta tags including Title, Description, and Open Graph. Boost your site's social sharing and search engine appearance.",
         category: "SEO Tools",
         icon: Terminal,
         route: "/meta-tag-generator",
@@ -460,7 +460,7 @@ export const TOOLS: Tool[] = [
     {
         id: "json-to-csv",
         name: "JSON to CSV",
-        description: "Convert JSON arrays to CSV",
+        description: "Convert JSON data structures to flat CSV files effortlessly. Perfect for exporting data for spreadsheets or simple database migrations.",
         category: "Converters",
         icon: RefreshCw,
         route: "/json-to-csv",
@@ -471,7 +471,7 @@ export const TOOLS: Tool[] = [
     {
         id: "string-trimmer",
         name: "Trim Whitespace",
-        description: "Clean up messy text strings",
+        description: "Quickly remove leading, trailing, and extra whitespaces from any text. Clean up your data and ensure consistency in your strings and logs.",
         category: "Text Tools",
         icon: Scissors,
         route: "/string-trimmer",
@@ -481,7 +481,7 @@ export const TOOLS: Tool[] = [
     {
         id: "html-entities",
         name: "HTML Entities",
-        description: "Encode/Decode HTML entities",
+        description: "Safely encode and decode HTML entities to prevent rendering issues. Convert special characters to their HTML-safe equivalent and vice-versa.",
         category: "Text Tools",
         icon: Code2,
         route: "/html-entities",
@@ -492,7 +492,7 @@ export const TOOLS: Tool[] = [
     {
         id: "domain-ip",
         name: "Domain to IP",
-        description: "Find the IP address of any domain",
+        description: "Convert any domain name into its corresponding IP address instantly. Useful for DNS troubleshooting, server configuration, and network debugging.",
         category: "SEO Tools",
         icon: Globe,
         route: "/domain-ip",
@@ -503,7 +503,7 @@ export const TOOLS: Tool[] = [
     {
         id: "line-counter",
         name: "Line Counter",
-        description: "Count total lines in a text",
+        description: "Count total lines, non-empty lines, and character density in your text documents. A simple yet powerful utility for code analysis and document review.",
         category: "Text Tools",
         icon: FileText,
         route: "/line-counter",
@@ -514,7 +514,7 @@ export const TOOLS: Tool[] = [
     {
         id: "secure-token",
         name: "Token Generator",
-        description: "Generate secure random tokens",
+        description: "Generate cryptographically secure tokens for authentication, API keys, and session management. Choose from various formats including HEX and Base64.",
         category: "Security",
         icon: Key,
         route: "/secure-token",
@@ -525,7 +525,7 @@ export const TOOLS: Tool[] = [
     {
         id: "gradient-generator",
         name: "Gradient Generator",
-        description: "Create beautiful CSS gradients visually",
+        description: "Design stunning linear and radial CSS gradients visually. Copy production-ready CSS code and level up your web designs with beautiful color transitions.",
         category: "Image Tools",
         icon: Palette,
         route: "/gradient-generator",
@@ -536,7 +536,7 @@ export const TOOLS: Tool[] = [
     {
         id: "color-tokens",
         name: "Color Tokens Gen",
-        description: "Generate shadcn/ui compatible color tokens",
+        description: "Generate professional shadcn/ui compatible color tokens from any base color. Create consistent, accessible themes for your modern web applications.",
         category: "Utility",
         icon: Layers,
         route: "/color-tokens",

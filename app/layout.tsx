@@ -4,6 +4,7 @@ import './globals.css'
 import { ThemeProvider } from '@/components/providers/theme-provider'
 import { Toaster } from 'sonner'
 import { Header } from '@/components/layout/header'
+import { Footer } from '@/components/layout/footer'
 import Script from 'next/script'
 
 const outfit = Outfit({
@@ -24,17 +25,17 @@ const spaceGrotesk = Space_Grotesk({
 
 export const metadata: Metadata = {
     title: {
-        default: 'StyloFront Tools',
-        template: '%s | StyloFront Tools',
+        default: 'StyloFront Tools - Premium All-in-One Developer Utilities',
+        template: '%s - StyloFront Tools',
     },
-    description: 'Developer tools and utilities by StyloFront.',
+    description: 'Access 40+ high-performance developer tools for image compression, JWT decoding, code minification, and more. Free, secure, and lightning-fast utilities.',
     icons: {
         icon: [
-            { url: '/tools-logo.png', sizes: '32x32', type: 'image/png' },
-            { url: '/tools-logo.png', sizes: '16x16', type: 'image/png' },
+            { url: '/tools-logo-t.png', sizes: '32x32', type: 'image/png' },
+            { url: '/tools-logo-t.png', sizes: '16x16', type: 'image/png' },
         ],
         apple: [
-            { url: '/tools-logo.png', sizes: '180x180', type: 'image/png' },
+            { url: '/tools-logo-t.png', sizes: '180x180', type: 'image/png' },
         ],
     },
     verification: {
@@ -52,18 +53,6 @@ export default function RootLayout({
             <head>
                 <meta charSet="UTF-8" />
                 <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
-                <meta name="robots" content="index, follow" />
-                <meta name="googlebot" content="index, follow" />
-                <meta name="viewport" content="width=device-width, initial-scale=1" />
-                <meta name="og:image" content="/ogimage.png" />
-                <meta name="twitter:image" content="/ogimage.png" />
-                <meta name="twitter:card" content="summary_large_image" />
-                <meta name="twitter:title" content="StyloFront Tools" />
-                <meta name="twitter:description" content="Developer tools and utilities by StyloFront." />
-                <meta name="twitter:creator" content="@stylofront" />
-                <meta name="twitter:site" content="@stylofront" />
-                <meta name="twitter:url" content="https://tools.stylofront.com" />
-                <meta name="twitter:image:alt" content="StyloFront Tools" />
                 <link rel="manifest" href="/manifest.json" />
                 {/* Google Search Console Verification */}
                 <meta name="google-site-verification" content="googlef5c90b0ba34f5df5" />
@@ -92,6 +81,7 @@ export default function RootLayout({
                     <div className="flex min-h-screen flex-col">
                         <Header />
                         <main className="flex-1">{children}</main>
+                        <Footer />
                     </div>
                     <Toaster />
                 </ThemeProvider>

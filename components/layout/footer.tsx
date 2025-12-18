@@ -56,7 +56,7 @@ export function Footer() {
                         <ul className="space-y-3 text-sm">
                             <li>
                                 <Link
-                                    href="/tools/image-compressor"
+                                    href="/image-compressor"
                                     className="text-muted-foreground hover:text-primary transition-colors flex items-center gap-2 group"
                                 >
                                     <Rocket className="h-4 w-4 text-primary/60 group-hover:text-primary group-hover:scale-110 transition-all shrink-0" />
@@ -65,7 +65,7 @@ export function Footer() {
                             </li>
                             <li>
                                 <Link
-                                    href="/tools/json-formatter"
+                                    href="/json-formatter"
                                     className="text-muted-foreground hover:text-primary transition-colors flex items-center gap-2 group"
                                 >
                                     <Code className="h-4 w-4 text-primary/60 group-hover:text-primary group-hover:scale-110 transition-all shrink-0" />
@@ -74,11 +74,20 @@ export function Footer() {
                             </li>
                             <li>
                                 <Link
-                                    href="/tools/password-generator"
+                                    href="/password-generator"
                                     className="text-muted-foreground hover:text-primary transition-colors flex items-center gap-2 group"
                                 >
                                     <Sparkles className="h-4 w-4 text-primary/60 group-hover:text-primary group-hover:scale-110 transition-all shrink-0" />
                                     <span>Password Generator</span>
+                                </Link>
+                            </li>
+                            <li>
+                                <Link
+                                    href="/code-minifier"
+                                    className="text-muted-foreground hover:text-primary transition-colors flex items-center gap-2 group"
+                                >
+                                    <Zap className="h-4 w-4 text-primary/60 group-hover:text-primary group-hover:scale-110 transition-all shrink-0" />
+                                    <span>Code Minifier</span>
                                 </Link>
                             </li>
                         </ul>
@@ -96,11 +105,20 @@ export function Footer() {
                         <ul className="space-y-3 text-sm">
                             <li>
                                 <Link
-                                    href="/#"
+                                    href="/"
                                     className="text-muted-foreground hover:text-primary transition-colors flex items-center gap-2 group"
                                 >
                                     <Zap className="h-4 w-4 text-primary/60 group-hover:text-primary group-hover:scale-110 transition-all shrink-0" />
                                     <span>All Tools</span>
+                                </Link>
+                            </li>
+                            <li>
+                                <Link
+                                    href="/search"
+                                    className="text-muted-foreground hover:text-primary transition-colors flex items-center gap-2 group"
+                                >
+                                    <Rocket className="h-4 w-4 text-primary/60 group-hover:text-primary group-hover:scale-110 transition-all shrink-0" />
+                                    <span>Search Tools</span>
                                 </Link>
                             </li>
                             <li>
@@ -111,59 +129,6 @@ export function Footer() {
                                     <Sparkles className="h-4 w-4 text-primary/60 group-hover:text-primary group-hover:scale-110 transition-all shrink-0" />
                                     <span>Feedback</span>
                                 </Link>
-                            </li>
-                            <li>
-                                <Link
-                                    href="/#"
-                                    className="text-muted-foreground hover:text-primary transition-colors flex items-center gap-2 group"
-                                >
-                                    <Rocket className="h-4 w-4 text-primary/60 group-hover:text-primary group-hover:scale-110 transition-all shrink-0" />
-                                    <span>Documentation</span>
-                                </Link>
-                            </li>
-                        </ul>
-                    </motion.div>
-
-                    {/* Social & Contact */}
-                    <motion.div
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.5, delay: 0.3 }}
-                        className="space-y-3"
-                    >
-                        <h4 className="font-semibold font-heading text-base mb-4">Connect</h4>
-                        <ul className="space-y-3 text-sm">
-                            <li>
-                                <a
-                                    href="https://github.com"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="text-muted-foreground hover:text-primary transition-colors flex items-center gap-2 group"
-                                >
-                                    <Github className="h-4 w-4 text-primary/60 group-hover:text-primary group-hover:scale-110 transition-all shrink-0" />
-                                    <span>GitHub</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a
-                                    href="https://twitter.com"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="text-muted-foreground hover:text-primary transition-colors flex items-center gap-2 group"
-                                >
-                                    <Twitter className="h-4 w-4 text-primary/60 group-hover:text-primary group-hover:scale-110 transition-all shrink-0" />
-                                    <span>Twitter</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a
-                                    href="mailto:hello@stylofronttools.com"
-                                    className="text-muted-foreground hover:text-primary transition-colors flex items-center gap-2 group"
-                                >
-                                    <Mail className="h-4 w-4 text-primary/60 group-hover:text-primary group-hover:scale-110 transition-all shrink-0" />
-                                    <span>Email Us</span>
-                                </a>
                             </li>
                         </ul>
                     </motion.div>
