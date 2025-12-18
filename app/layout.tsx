@@ -41,6 +41,28 @@ export const metadata: Metadata = {
     verification: {
         google: process.env.GOOGLE_SITE_VERIFICATION || 'googlef5c90b0ba34f5df5',
     },
+    openGraph: {
+        title: 'StyloFront Tools - Premium All-in-One Developer Utilities',
+        description: 'Access 40+ high-performance developer tools for image compression, JWT decoding, code minification, and more. Free, secure, and lightning-fast utilities.',
+        url: 'https://tools.stylofront.com',
+        siteName: 'StyloFront Tools',
+        images: [
+            {
+                url: '/ogimage.png',
+                width: 1200,
+                height: 630,
+                alt: 'StyloFront Tools SEO Image',
+            },
+        ],
+        locale: 'en_US',
+        type: 'website',
+    },
+    twitter: {
+        card: 'summary_large_image',
+        title: 'StyloFront Tools - Premium All-in-One Developer Utilities',
+        description: 'Access 40+ high-performance developer tools for image compression, JWT decoding, code minification, and more. Free, secure, and lightning-fast utilities.',
+        images: ['/ogimage.png'],
+    }
 }
 
 export default function RootLayout({
