@@ -30,7 +30,7 @@ export function FeedbackForm() {
                     Accept: "application/json",
                 },
                 body: JSON.stringify({
-                    access_key: "YOUR_ACCESS_KEY_HERE", // Replace with your actual access key
+                    access_key: "b3673d69-0a75-4567-8d2d-50786ba24382", // Replace with your actual access key
                     subject: `StyloFront Tools - ${formType === "feedback" ? "New Feedback" : "Bug Report"}`,
                     name,
                     email,
